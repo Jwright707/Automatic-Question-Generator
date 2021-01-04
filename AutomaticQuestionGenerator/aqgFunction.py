@@ -1,4 +1,5 @@
 import spacy
+import en_core_web_sm
 import clause
 import nonClause
 import identification
@@ -11,7 +12,7 @@ class AutomaticQuestionGenerator():
     def aqgParse(self, sentence):
 
         #nlp = spacy.load("en")
-        nlp = spacy.load('en_core_web_md')
+        nlp = en_core_web_sm.load()
 
         singleSentences = sentence.split(".")
         questionsList = []
@@ -173,7 +174,7 @@ class AutomaticQuestionGenerator():
         print("End  OutPut")
         print("-----X-----\n\n")
 
-        output = "output file path -- ?? ../DB/output.txt"
+        output = "DB/output.txt"
         w = open(output, 'w+', encoding="utf8")
         w.write(out)
         w.close()
